@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&amp;display=swap" 
+    rel="stylesheet"></head>
+<body>
+    <div class="w-full min-h-screen text-l2 bg-custom-gradient overflow-hidden">
+        <h1 class="text-center uppercase pt-[26px] font-extrabold text-[2em] tracking-[2px]">Weather App</h1>
+        <div id="tab" class="flex justify-between w-[90%] max-w-[550px] my-0 mx-auto mt-[4rem] cursor-pointer 
+        text-[0.875rem] tracking-[1.75px]">
+            <div id="yw" class="py-[5px] px-[8px]">Your Weather</div>
+            <div id="sw" class="py-[5px] px-[8px]">Search Weather</div>
+        </div>
+
+        <div id="weather-container" class="my-[4rem]">
+            <!-- grant location -->
+            <div id="grant-container" class="flex flex-col items-center">
+                <img class="mb-[2rem]" src="assets/location.png" width="80" height="80">
+                <p class="text-[1.75rem] font-bold ">Grant Location Access</p>
+                <p id="allow-access" class="text-[0.85rem] font-normal mt-[0.75rem] mb-[1.75rem] tracking-[0.75px]">Allow Access To Get Weather Information.</p>
+                <button id="grant-access-button" class="text-[0.85rem] uppercase rounded-[5px] bg-d2 cursor-pointer py-[10px] px-[30px] ">Grant Access</button>
+            </div>
+
+            <!-- search form -->
+            <form id="form-container" class="w-[90%] max-w-[550px] mx-auto flex justify-center items-center gap-x-[10px] mb-[3rem]">
+                <input id="search-input" placeholder="Search for city..." class="w-[calc(100%-80px)] h-[40px] px-[20px] 
+                bg-[rgba(219,226,239,0.5)] rounded-[10px] placeholder:text-[rgba(255,255,255,0.7)] 
+                focus:outline focus:outline-[3px] focus:outline-white/70 ">
+                <button type="submit" class="rounded-full w-[40px] h-[40px] flex items-center justify-center bg-d2">
+                    <img src="assets/search.png" width="20" height="20" alt="">
+                </button>
+            </form>
+
+            <!-- loading screen -->
+            <div id="loading-screen" class="flex flex-col justify-center items-center">
+                <img src="assets/loading.gif" width="150" height="150" alt="">
+                <p class="uppercase ">Loading</p>
+            </div>
+
+            <!-- weather info -->
+            <div id="user-info-container" class="flex flex-col justify-center items-center">
+                <!--city name and flag-->
+                <div class="flex items-center gap-y-[0.5rem] gap-x-[0.5rem] my-[1rem]">
+                    <p id="city-name" class="text-[2rem]"></p>
+                    <img id="country-icon" width="30px" height="30px" class="object-contain">
+                </div>
+                <!-- weather info -->
+                <p id="weather-desc" class="text-[1.5rem] font-light"></p>
+                <img id="weather-icon" class="w-[90px] h-[90px]">
+                <p id="temp" class="text-[2.75rem] font-bold"></p>
+
+                <div class="flex gap-y-[10px] gap-x-[20px] justify-center my-[2rem]">
+                    <div class="card">
+                        <img src="assets/wind.png" alt="">
+                        <p>windspeed</p>
+                        <p id="windspeed-val"></p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/humidity.png" alt="">
+                        <p>humidity</p>
+                        <p id="humidity-val"></p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/cloud.png" alt="">
+                        <p>clouds</p>
+                        <p id="cloud-val"></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

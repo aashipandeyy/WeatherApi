@@ -1,0 +1,67 @@
+@tailwind base;  
+@tailwind components;  
+@tailwind utilities;
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+:root{
+    --colorD1: #112D4E;
+    --colorD2: #3F72AF;
+    --colorL1: #DBE2EF;
+    --colorL2: #F9F7F7;
+}
+#tab div.current-tab {
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+#grant-container{
+    display: none;
+}
+#grant-container.active{
+    display: flex;
+}
+#loading-screen{
+    display: none;
+}
+#loading-screen.active{
+    display: flex;
+}
+#user-info-container{
+    display: none;
+}
+#user-info-container.active{
+    display: flex;
+}
+#form-container{
+    display: none;
+}
+#form-container.active{
+    display: flex;
+}
+.card{
+    width: 30%;
+    max-width: 200px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px 0;
+    align-items: center;
+}
+.card img{
+    width: 50px;
+    height: 50px;
+}
+.card p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.card p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
